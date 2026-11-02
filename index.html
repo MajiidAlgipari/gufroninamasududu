@@ -170,10 +170,12 @@
                         class="text-2xl sm:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-indigo-300">
                         Gufron Inama Sududu
                     </h1>
-                    <p class="text-xs sm:text-sm font-medium text-slate-400 flex items-center gap-2">
+                    <p class="text-xs sm:text-sm font-medium text-slate-400 flex flex-wrap items-center gap-2 mt-0.5">
                         <span>IoT Smart Home Control Center</span>
                         <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-500"></span>
                         <span class="text-indigo-400">ESP8266 & MQTT Broker</span>
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                        <span class="text-amber-400 font-semibold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Kelompok 4</span>
                     </p>
                 </div>
             </div>
@@ -336,8 +338,38 @@
 
             </div>
 
-            <!-- Right Column: System Info & Terminal Logs (5 Cols) -->
+            <!-- Right Column: System Info, Team & Terminal Logs (5 Cols) -->
             <div class="lg:col-span-5 space-y-8">
+
+                <!-- Team Members Card (Kelompok 4) -->
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-amber-500/20">
+                    <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+                        <i data-lucide="users" class="w-5 h-5 text-amber-400"></i>
+                        Anggota Kelompok 4
+                    </h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2.5 p-2 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                            <span class="font-medium text-white">Aditya Putra Perdana</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 p-2 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                            <span class="font-medium text-white">Agis Gustian Saputra</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 p-2 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                            <span class="font-medium text-white">Ghiannindra Fahreiza Putra P.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 p-2 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                            <span class="font-medium text-white">Majiid Al Gipari Dermawan</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 p-2 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                            <span class="font-medium text-white">Rasya Ikhsan Putra Pratama</span>
+                        </li>
+                    </ul>
+                </div>
 
                 <!-- MQTT Connection Details Card -->
                 <div class="glass-card rounded-2xl p-6 shadow-xl">
@@ -377,7 +409,7 @@
                 </div>
 
                 <!-- Console / Terminal Live Log -->
-                <div class="glass-card rounded-2xl p-6 shadow-xl flex flex-col h-[380px]">
+                <div class="glass-card rounded-2xl p-6 shadow-xl flex flex-col h-[320px]">
                     <div class="flex items-center justify-between mb-3">
                         <h3 class="text-base font-bold text-white flex items-center gap-2">
                             <i data-lucide="terminal" class="w-5 h-5 text-purple-400"></i>
@@ -402,11 +434,12 @@
         </div>
 
         <!-- Footer Footer -->
-        <footer class="mt-12 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6">
-            <p>© 2026 Proyek IoT Kendali Jarak Jauh - <span class="text-slate-300 font-semibold">Gufron Inama
-                    Sududu</span></p>
-            <p class="mt-1 text-[11px]">Terintegrasi dengan Broker EMQX MQTT (`broker.emqx.io`) & ESP8266
-                Microcontroller</p>
+        <footer class="mt-12 text-center text-xs text-slate-500 border-t border-slate-800/60 pt-6 space-y-1">
+            <p>© 2026 Proyek IoT Kendali Jarak Jauh - <span class="text-slate-300 font-semibold">Gufron Inama Sududu</span> | <span class="text-amber-400 font-semibold">Kelompok 4</span></p>
+            <p class="text-[11px] text-slate-400">
+                Anggota: Aditya Putra Perdana • Agis Gustian Saputra • Ghiannindra Fahreiza Putra P. • Majiid Al Gipari Dermawan • Rasya Ikhsan Putra Pratama
+            </p>
+            <p class="mt-2 text-[10px] text-slate-600">Terintegrasi dengan Broker EMQX MQTT (`broker.emqx.io`) & ESP8266 Microcontroller</p>
         </footer>
 
     </div>
@@ -437,7 +470,6 @@
             if (!audioCtx || isAudioMuted) return;
             const now = audioCtx.currentTime;
 
-            // Frequency sequence representing an awkward chirp chime (E5 -> D#5 -> E5 -> D5)
             const notes = [659.25, 622.25, 659.25, 587.33];
             notes.forEach((freq, index) => {
                 const osc = audioCtx.createOscillator();
@@ -463,12 +495,10 @@
             if (!audioCtx || isAudioMuted) return;
             const now = audioCtx.currentTime;
 
-            // Fast Pitch Sweep (Pop) + Bright Resonance
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
 
             osc.type = 'sine';
-            // Rapid pitch drop from 1400Hz down to 250Hz in 50ms
             osc.frequency.setValueAtTime(1400, now);
             osc.frequency.exponentialRampToValueAtTime(250, now + 0.05);
 
@@ -481,11 +511,10 @@
             osc.start(now);
             osc.stop(now + 0.06);
 
-            // Subtle secondary high chime harmonics (Snapchat tone)
             const chime = audioCtx.createOscillator();
             const chimeGain = audioCtx.createGain();
             chime.type = 'sine';
-            chime.frequency.setValueAtTime(2093, now + 0.01); // C7 pitch
+            chime.frequency.setValueAtTime(2093, now + 0.01);
 
             chimeGain.gain.setValueAtTime(0.2, now + 0.01);
             chimeGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
@@ -511,7 +540,7 @@
                 icon.setAttribute('data-lucide', 'volume-2');
                 icon.className = 'w-4 h-4 text-emerald-400';
                 initAudioContext();
-                playSnapchatSound(); // Sample audio preview
+                playSnapchatSound();
             }
             lucide.createIcons();
         }
@@ -579,13 +608,11 @@
         client.on('connect', () => {
             addLog(`Terhubung ke broker MQTT! Client ID: ${clientId}`, 'success');
 
-            // Update UI Connection Status
             document.getElementById('status-dot').className = 'relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500';
             document.getElementById('ping-pulse').className = 'animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75';
             document.getElementById('status-text').innerText = 'Terhubung';
             document.getElementById('status-text').className = 'font-bold text-emerald-400 text-sm';
 
-            // Subscribe to project topics (Wildcard # for subtopics)
             const topicPattern = 'ghianmajiid.com/#';
             client.subscribe(topicPattern, {qos: 1}, (err) => {
                 if (!err) {
@@ -619,7 +646,6 @@
             const nowTime = new Date().toLocaleTimeString();
             addLog(`Diterima Pesan -> [${topic}]: ${msgStr}`, 'sub');
 
-            // Handle Topic Lampu 1 Control State
             if (topic === "ghianmajiid.com/lampu/") {
                 const switch1 = document.getElementById("lamp-switch-1");
                 if (msgStr === "on") {
@@ -631,7 +657,6 @@
                 }
             }
 
-            // Handle Topic Lampu 2 Control State
             if (topic === "ghianmajiid.com/lampu/2") {
                 const switch2 = document.getElementById("lamp-switch-2");
                 if (msgStr === "on2" || msgStr === "on") {
@@ -643,7 +668,6 @@
                 }
             }
 
-            // Handle Response Status from ESP8266 Hardware (Lampu 1)
             if (topic === "ghianmajiid.com/status") {
                 const esp1 = document.getElementById("esp-status-1");
                 document.getElementById("esp-time-1").innerText = nowTime;
@@ -655,7 +679,6 @@
                 }
             }
 
-            // Handle Response Status from ESP8266 Hardware (Lampu 2)
             if (topic === "rokhmad.com/status2") {
                 const esp2 = document.getElementById("esp-status-2");
                 document.getElementById("esp-time-2").innerText = nowTime;
@@ -670,14 +693,14 @@
 
         // Toggle Switch & Publish Logic
         function toggleLampu(lampNumber) {
-            initAudioContext(); // Ensure Audio Context active on user click
+            initAudioContext();
             const isChecked = document.getElementById(`lamp-switch-${lampNumber}`).checked;
             updateSwitchUI(lampNumber, isChecked);
 
             if (isChecked) {
-                playAwkwardSound(); // Awkward sound effect when turning ON
+                playAwkwardSound();
             } else {
-                playSnapchatSound(); // Snapchat sound effect when turning OFF
+                playSnapchatSound();
             }
 
             if (lampNumber === 1) {
