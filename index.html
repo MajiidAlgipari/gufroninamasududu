@@ -581,7 +581,7 @@
             }
 
             // Handle Topic Lampu 2 Control State
-            if (topic === "rokhmad.com/lampu2") {
+            if (topic === "ghianmajiid.com/lampu2") {
                 const switch2 = document.getElementById("lamp-switch-2");
                 if (msgStr === "on2" || msgStr === "on") {
                     switch2.checked = true;
@@ -593,7 +593,7 @@
             }
 
             // Handle Response Status from ESP8266 Hardware (Lampu 1)
-            if (topic === "rokhmad.com/status") {
+            if (topic === "ghianmajiid.com/status") {
                 const esp1 = document.getElementById("esp-status-1");
                 document.getElementById("esp-time-1").innerText = nowTime;
                 esp1.innerText = msgStr;
@@ -605,7 +605,7 @@
             }
 
             // Handle Response Status from ESP8266 Hardware (Lampu 2)
-            if (topic === "rokhmad.com/status2") {
+            if (topic === "ghianmajiid.com/status2") {
                 const esp2 = document.getElementById("esp-status-2");
                 document.getElementById("esp-time-2").innerText = nowTime;
                 esp2.innerText = msgStr;
@@ -631,10 +631,10 @@
 
             if (lampNumber === 1) {
                 const payload = isChecked ? "on" : "off";
-                publishMQTT("rokhmad.com/lampu", payload);
+                publishMQTT("ghianmajiid.com/lampu", payload);
             } else if (lampNumber === 2) {
                 const payload = isChecked ? "on2" : "off2";
-                publishMQTT("rokhmad.com/lampu2", payload);
+                publishMQTT("ghianmajiid.com/lampu2", payload);
             }
         }
 
