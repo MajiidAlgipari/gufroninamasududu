@@ -662,16 +662,16 @@
                 updateSwitchUI(1, true);
                 updateSwitchUI(2, true);
                 playAwkwardSound();
-                publishMQTT("rokhmad.com/lampu", "on");
-                publishMQTT("rokhmad.com/lampu2", "on2");
+                publishMQTT("ghianmajiid.com/lampu", "on");
+                publishMQTT("ghianmajiid.com/lampu2", "on2");
             } else {
                 document.getElementById("lamp-switch-1").checked = false;
                 document.getElementById("lamp-switch-2").checked = false;
                 updateSwitchUI(1, false);
                 updateSwitchUI(2, false);
                 playSnapchatSound();
-                publishMQTT("rokhmad.com/lampu", "off");
-                publishMQTT("rokhmad.com/lampu2", "off2");
+                publishMQTT("ghianmajiid.com/lampu", "off");
+                publishMQTT("ghianmajiid.com/lampu2", "off2");
             }
         }
 
